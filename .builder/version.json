@@ -1,0 +1,12 @@
+{
+  "backup_version": "0.0.1",
+  "plugin_version": "1.0.1",
+  "last_updated": "2026-03-16",
+  "backup_history": [
+    {
+      "version": "0.0.1",
+      "timestamp": "2026-03-16T00:00:00Z",
+      "description": "Initial Elementor FAQ plugin setup"
+    }
+  ]
+}

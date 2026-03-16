@@ -1,0 +1,159 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [develop, test]
+  pull_request:
+    branches: [develop, test]
+
+jobs:
+  php-tests:
+    name: PHP Tests
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wordpress_test
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, ctype, json, mysqli
+          coverage: xdebug
+          tools: composer, phpunit
+
+      - name: Setup WordPress
+        uses: aaemnnosttv/wp-cli-action@v2
+        with:
+          args: core download --path=/var/www/html
+
+      - name: Install Composer dependencies
+        run: |
+          cd .test
+          composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Run PHPUnit
+        run: |
+          cd .test
+          ./vendor/bin/phpunit --configuration config/phpunit.xml --coverage-clover results/coverage.xml
+
+      - name: Check coverage
+        run: |
+          coverage=$(php -r "echo simplexml_load_file('.test/results/coverage.xml')->project->metrics['coveredstatements'] / simplexml_load_file('.test/results/coverage.xml')->project->metrics['statements'] * 100;")
+          if (( $(echo "$coverage < 90" | bc -l) )); then
+            echo "Coverage $coverage% is below 90% threshold"
+            exit 1
+          fi
+          echo "Coverage $coverage% meets threshold"
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: .test/results/coverage.xml
+          flags: php
+          name: php-coverage
+
+      - name: Archive test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: php-test-results
+          path: .test/results/
+
+  js-tests:
+    name: JavaScript Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: .test/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd .test/js
+          npm ci
+
+      - name: Run Jest tests
+        run: |
+          cd .test/js
+          npm test -- --coverage --coverageReporters=json --coverageReporters=text --coverageReporters=lcov
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: .test/js/coverage/lcov.info
+          flags: javascript
+          name: js-coverage
+
+      - name: Archive test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: js-test-results
+          path: .test/results/
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run PHPStan
+        uses: phpstan/phpstan-github-action@v1
+        with:
+          configuration: .test/config/phpstan.neon
+          level: 5
+
+      - name: Run PHP_CodeSniffer
+        run: |
+          cd .test
+          composer require --dev squizlabs/php_codesniffer
+          vendor/bin/phpcs --standard=WordPress --extensions=php --ignore=vendor,tests ./src
+
+      - name: Security audit
+        uses: security/securesamli-action@master
+
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check code style
+        run: |
+          cd .test
+          ./vendor/bin/phpcs --standard=WordPress src/
+
+      - name: Check file structure
+        run: |
+          if [ ! -f "plugin builder/plugin/Elementor-FAQ/elementor-faq.php" ]; then
+            echo "Main plugin file not found"
+            exit 1
+          fi
+
+      - name: Verify plugin header
+        run: |
+          grep -q "Plugin Name:" "plugin builder/plugin/Elementor-FAQ/elementor-faq.php"
+          grep -q "Version:" "plugin builder/plugin/Elementor-FAQ/elementor-faq.php"
