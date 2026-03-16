@@ -45,6 +45,8 @@ class Plugin
 
         add_action('elementor/widgets/register', [$this, 'register_elementor_integration']);
         add_action('elementor/elements/categories_registered', [$this, 'register_elementor_category']);
+        add_action('elementor/frontend/after_register_styles', [\Elementor_FAQ\Elementor\Elementor_Integration::class, 'register_styles']);
+        add_action('elementor/frontend/after_register_scripts', [\Elementor_FAQ\Elementor\Elementor_Integration::class, 'register_scripts']);
     }
 
     public function load_textdomain(): void
