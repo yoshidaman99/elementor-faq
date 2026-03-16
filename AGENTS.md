@@ -110,7 +110,7 @@ Elementor_FAQ\Core\Plugin (singleton)
 | `FAQ_Widget` | `plugin builder/plugin/Elementor-FAQ/src/Elementor/Widgets/FAQ_Widget.php` | Elementor widget with controls/render |
 
 ### Autoloader
-PSR-4 autoloader in `elementor-faq.php`:
+PSR-4 autoloader in `plugin builder/plugin/Elementor-FAQ/elementor-faq.php`:
 - Namespace: `Elementor_FAQ`
 - Maps to `src/` directory
 
