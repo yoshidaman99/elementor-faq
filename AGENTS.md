@@ -11,9 +11,6 @@ FAQ/
 ├── .git/                  # Git repository
 ├── .output/               # Build output directory (ZIP files, checksums)
 ├── .ref/                  # Reference plugins for development
-├── elementor-faq.php      # Main plugin file (entry point, autoloader)
-├── README.md              # Developer documentation
-├── readme.txt             # WordPress.org plugin repository readme
 ├── AGENTS.md              # This file
 ├── assets/
 │   ├── css/
