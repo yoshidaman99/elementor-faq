@@ -173,10 +173,6 @@
     display: flex;
 }
 
-.efaq-item.active .efaq-item-icon {
-    transform: rotate(180deg);
-}
-
 /* Answer */
 .efaq-item-answer {
     overflow: hidden;
