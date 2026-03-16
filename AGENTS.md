@@ -3,7 +3,43 @@
 ## Project Structure
 
 ### Repository Root
-
+```
+FAQ/
+├── .builder/              # Build scripts and configuration
+│   ├── build-zip.ps1      # PowerShell script for creating release ZIPs
+│   └── zip-config.json    # Build configuration (exclusions, required files)
+├── .git/                  # Git repository
+├── .opencode/             # OpenCode development environment
+├── .output/               # Build output directory
+│   ├── build-log.json     # Build metadata
+│   ├── elementor-faq-X.Y.Z.zip
+│   ├── elementor-faq-X.Y.Z.zip.md5
+│   └── elementor-faq-X.Y.Z.zip.sha256
+├── .ref/                  # Reference plugins for development
+├── elementor-faq.php      # Main plugin file (entry point, autoloader)
+├── README.md              # Developer documentation
+├── readme.txt             # WordPress.org plugin repository readme
+├── AGENTS.md              # This file
+├── assets/
+│   ├── css/
+│   │   ├── admin.css      # Admin area styling (meta boxes, columns)
+│   │   └── faq.css        # Frontend widget styling (accordion, tabs, search)
+│   └── js/
+│       ├── admin.js       # Admin functionality (Q&A repeater, shortcode copy)
+│       └── faq.js         # Frontend functionality (accordion, search, filtering)
+└── src/                   # PHP classes (PSR-4, namespace: Elementor_FAQ)
+    ├── Core/
+    │   ├── Debug_Logger.php   # Debugging utility (log, error, warning, info)
+    │   └── Plugin.php         # Main controller (services, hooks, init)
+    ├── Elementor/
+    │   ├── Elementor_Integration.php  # Registers widgets/styles/scripts
+    │   └── Widgets/
+    │       └── FAQ_Widget.php # Main Elementor widget (controls, render)
+    ├── PostTypes/
+    │   └── FAQ_Post_Type.php  # Custom post type 'faq-item' with meta boxes
+    └── Taxonomies/
+        └── FAQ_Category.php   # Taxonomy 'faq-category' for organizing FAQs
+```
 
 ## Architecture
 
@@ -67,4 +103,4 @@ This will:
 3. Commit changes: `git add -A && git commit -m "Release vX.Y.Z"`
 4. Tag: `git tag vX.Y.Z`
 5. Push: `git push origin master --tags`
-6. Create GitHub release: `gh release create vX.Y.Z ".output/elementor-faq-X.Y.Z.zip" --title "vX.Y.Z" --notes "Release notes"`
+6. Create GitHub release: `gh release create vX.Y.Z ".output/elementor-faq-X.Y.Z.zip" --title "vX.Y.Z" --notes "Release notes"
