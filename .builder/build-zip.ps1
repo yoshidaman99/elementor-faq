@@ -211,6 +211,8 @@ try {
             if ($pattern -eq ".env" -and $relativePath -eq ".env") { $exclude = $true; break }
             if ($pattern -like ".env.*" -and $relativePath -like ".env.*") { $exclude = $true; break }
             if ($pattern -eq "*.map" -and $relativePath -like "*.map") { $exclude = $true; break }
+            if ($pattern -eq "plugin builder" -and $relativePath -like "plugin builder*") { $exclude = $true; break }
+            if ($pattern -eq "AGENTS.md" -and $relativePath -eq "AGENTS.md") { $exclude = $true; break }
         }
         
         if (-not $exclude) {
