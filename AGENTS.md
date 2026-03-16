@@ -1,21 +1,57 @@
 # AGENTS.md - Elementor FAQ Plugin
 
-## Project Structure
+## Repository Structure Rules
 
-### Local Development Environment
+### CRITICAL: GitHub Repository Structure
+
+The GitHub repository MUST always have **plugin files at the root level**:
+
+```
+elementor-faq/
+├── .gitignore
+├── .github/
+│   └── CONTRIBUTING.md
+├── README.md
+├── elementor-faq.php      # Main plugin file - MUST be at root
+├── readme.txt
+├── assets/
+│   ├── css/
+│   │   ├── admin.css
+│   │   └── faq.css
+│   └── js/
+│       ├── admin.js
+│       └── faq.js
+└── src/
+    ├── Core/
+    ├── Elementor/
+    ├── PostTypes/
+    └── Taxonomies/
+```
+
+### NEVER commit these folders (gitignored):
+- `.builder/` - Build scripts
+- `.opencode/` - IDE settings
+- `.output/` - Build artifacts
+- `.ref/` - Reference plugins
+- `AGENTS.md` - This file
+
+## Local Development Environment
+
 ```
 FAQ/
 ├── .builder/                  # Build scripts (local only - gitignored)
 │   ├── build-zip.ps1          # PowerShell script for creating release ZIPs
 │   └── zip-config.json        # Build configuration (exclusions, required files)
 ├── .git/                      # Git repository
+├── .github/                   # GitHub configs (tracked)
+│   └── CONTRIBUTING.md
 ├── .opencode/                 # OpenCode development environment (local only - gitignored)
 ├── .output/                   # Build output directory (local only - gitignored)
-│   ├── build-log.json         # Build metadata
+│   ├── build-log.json
 │   ├── elementor-faq-X.Y.Z.zip
 │   ├── elementor-faq-X.Y.Z.zip.md5
 │   └── elementor-faq-X.Y.Z.zip.sha256
-├── .ref/                      # Reference plugins for development (local only - gitignored)
+├── .ref/                      # Reference plugins (local only - gitignored)
 ├── .gitignore                 # Excludes local dev files from git
 ├── AGENTS.md                  # This file (local only - gitignored)
 ├── elementor-faq.php          # Main plugin file (entry point, autoloader)
@@ -23,28 +59,24 @@ FAQ/
 ├── readme.txt                 # WordPress.org plugin repository readme
 ├── assets/
 │   ├── css/
-│   │   ├── admin.css          # Admin area styling (meta boxes, columns)
-│   │   └── faq.css            # Frontend widget styling (accordion, tabs, search)
+│   │   ├── admin.css
+│   │   └── faq.css
 │   └── js/
-│       ├── admin.js           # Admin functionality (Q&A repeater, shortcode copy)
-│       └── faq.js             # Frontend functionality (accordion, search, filtering)
+│       ├── admin.js
+│       └── faq.js
 └── src/                       # PHP classes (PSR-4, namespace: Elementor_FAQ)
     ├── Core/
-    │   ├── Debug_Logger.php   # Debugging utility (log, error, warning, info)
-    │   └── Plugin.php         # Main controller (services, hooks, init)
+    │   ├── Debug_Logger.php
+    │   └── Plugin.php
     ├── Elementor/
-    │   ├── Elementor_Integration.php  # Registers widgets/styles/scripts
+    │   ├── Elementor_Integration.php
     │   └── Widgets/
-    │       └── FAQ_Widget.php # Main Elementor widget (controls, render)
+    │       └── FAQ_Widget.php
     ├── PostTypes/
-    │   └── FAQ_Post_Type.php  # Custom post type 'faq-item' with meta boxes
+    │   └── FAQ_Post_Type.php
     └── Taxonomies/
-        └── FAQ_Category.php   # Taxonomy 'faq-category' for organizing FAQs
+        └── FAQ_Category.php
 ```
-
-### GitHub Repository (Tracked Files)
-Same as local - plugin files at root, dev folders excluded via .gitignore:
-- `.gitignore` excludes: `.builder/`, `.opencode/`, `.output/`, `.ref/`, `AGENTS.md`
 
 ## Architecture
 
@@ -88,8 +120,6 @@ PSR-4 autoloader in `elementor-faq.php`:
 ## Build & Release Process
 
 ### Building a Release ZIP
-
-Use the PowerShell build script in `.builder/`:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File ".builder/build-zip.ps1"
