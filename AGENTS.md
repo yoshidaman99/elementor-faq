@@ -106,6 +106,8 @@ Elementor_FAQ\Core\Plugin (singleton)
 
 ### Key Classes
 
+Paths relative to GitHub repo root:
+
 | Class | File | Purpose |
 |-------|------|---------|
 | `Plugin` | `src/Core/Plugin.php` | Main controller, registers services/hooks |
