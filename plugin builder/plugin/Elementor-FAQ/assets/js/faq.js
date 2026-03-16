@@ -188,12 +188,14 @@
         });
     });
     
-    $(window).on('elementor/frontend/init', function() {
-        elementorFrontend.hooks.addAction('frontend/element_ready/elementor_faq.default', function($scope) {
-            $scope.find('.efaq-wrapper').each(function() {
-                initFAQ($(this));
+    if (typeof elementorFrontend !== 'undefined') {
+        $(window).on('elementor/frontend/init', function() {
+            elementorFrontend.hooks.addAction('frontend/element_ready/elementor_faq.default', function($scope) {
+                $scope.find('.efaq-wrapper').each(function() {
+                    initFAQ($(this));
+                });
             });
         });
-    });
+    }
     
 })(jQuery);
