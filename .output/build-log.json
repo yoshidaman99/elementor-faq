@@ -1,0 +1,20 @@
+﻿{
+    "build_info":  {
+                       "timestamp":  "2026-03-17T01:26:19Z",
+                       "builder":  "build-zip.ps1"
+                   },
+    "checksums":  {
+                      "sha256":  "e23864a75ce50475ce5bf96299763f68166fbac8a33347c2a9777326cb735ab2",
+                      "md5":  "c2eecc2c40edb00be25085bb19e5e88a"
+                  },
+    "files_count":  12,
+    "zip_file":  "elementor-faq-1.0.6.zip",
+    "version":  "1.0.6",
+    "git":  {
+                "branch":  "master",
+                "commit":  "b4e7f66407ec9c515cd052e653d00644ceebbe4d",
+                "tag":  null
+            },
+    "zip_size_kb":  17.43,
+    "plugin_slug":  "elementor-faq"
+}
