@@ -49,4 +49,27 @@ function elementor_faq()
     return \Elementor_FAQ\Core\Plugin::get_instance();
 }
 
+function elementor_faq_activate()
+{
+    if (!current_user_can('activate_plugins')) {
+        return;
+    }
+
+    flush_rewrite_rules();
+
+    $version = get_option('elementor_faq_version', '0.0.0');
+
+    if (version_compare($version, ELEMENTOR_FAQ_VERSION, '<')) {
+        update_option('elementor_faq_version', ELEMENTOR_FAQ_VERSION);
+    }
+}
+
+function elementor_faq_deactivate()
+{
+    flush_rewrite_rules();
+}
+
+register_activation_hook(__FILE__, 'elementor_faq_activate');
+register_deactivation_hook(__FILE__, 'elementor_faq_deactivate');
+
 add_action('plugins_loaded', 'elementor_faq', 5);
