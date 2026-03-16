@@ -18,7 +18,7 @@ FAQ/
 ├── .ref/                      # Reference plugins for development (local only)
 ├── AGENTS.md                  # This file (local only)
 ├── plugin builder/            # Legacy plugin folder (local only)
-
+        ├── plugin builder/ 
         ├── elementor-faq.php          # Main plugin file (entry point, autoloader)
         ├── README.md                  # Developer documentation
         ├── readme.txt                 # WordPress.org plugin repository readme
