@@ -149,7 +149,8 @@ This will:
 
 1. Update version in `plugin builder/plugin/Elementor-FAQ/elementor-faq.php` (header and constant)
 2. Run build script: `powershell -ExecutionPolicy Bypass -File ".builder/build-zip.ps1"`
-3. Commit changes: `git add -A && git commit -m "Release vX.Y.Z"`
-4. Tag: `git tag vX.Y.Z`
-5. Push: `git push origin master --tags`
-6. Create GitHub release: `gh release create vX.Y.Z ".output/elementor-faq-X.Y.Z.zip" --title "vX.Y.Z" --notes "Release notes"
+3. Stage plugin files from `plugin builder/plugin/Elementor-FAQ/` to git root
+4. Commit changes: `git add -A && git commit -m "Release vX.Y.Z"`
+5. Tag: `git tag vX.Y.Z`
+6. Push: `git push origin master --tags`
+7. Create GitHub release: `gh release create vX.Y.Z ".output/elementor-faq-X.Y.Z.zip" --title "vX.Y.Z" --notes "Release notes"
