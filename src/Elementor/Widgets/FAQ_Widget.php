@@ -434,22 +434,7 @@ class FAQ_Widget extends Widget_Base
         $this->add_group_control(Group_Control_Typography::get_type(), [
             'name'     => 'answer_typography',
             'label'    => __('Typography', 'elementor-faq'),
-            'selector' => '{{WRAPPER}} .efaq-item-answer, {{WRAPPER}} .efaq-item-answer-content p',
-        ]);
-
-        $this->add_responsive_control('answer_font_size', [
-            'label'      => __('Font Size', 'elementor-faq'),
-            'type'       => Controls_Manager::SLIDER,
-            'size_units' => ['px', 'em', 'rem'],
-            'range'      => [
-                'px'  => ['min' => 10, 'max' => 40],
-                'em'  => ['min' => 0.5, 'max' => 3],
-                'rem' => ['min' => 0.5, 'max' => 3],
-            ],
-            'selectors'  => [
-                '{{WRAPPER}} .efaq-item-answer' => '--efaq-item-answer-font-size: {{SIZE}}{{UNIT}}; font-size: {{SIZE}}{{UNIT}};',
-                '{{WRAPPER}} .efaq-item-answer-content p' => 'font-size: {{SIZE}}{{UNIT}};',
-            ],
+            'selector' => '{{WRAPPER}} .efaq-item-answer, {{WRAPPER}} .efaq-item-answer-content, {{WRAPPER}} .efaq-item-answer-content p',
         ]);
 
         $this->add_control('answer_color', [
