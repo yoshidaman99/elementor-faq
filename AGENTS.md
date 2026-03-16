@@ -1,5 +1,89 @@
 # AGENTS.md - Elementor FAQ Plugin
 
+## Project Structure
+
+### Repository Root
+```
+FAQ/
+├── .builder/              # Build scripts and configuration
+│   ├── build-zip.ps1      # PowerShell script for creating release ZIPs
+│   └── zip-config.json    # Build configuration (exclusions, required files)
+├── .git/                  # Git repository
+├── .opencode/             # OpenCode development environment
+├── .output/               # Build output directory (ZIP files, checksums)
+├── .ref/                  # Reference plugins for development
+├── plugin builder/        # Actual plugin code
+│   └── plugin/
+│       └── Elementor-FAQ/ # Plugin root for distribution
+└── AGENTS.md              # This file
+```
+
+### Plugin Directory (`plugin builder/plugin/Elementor-FAQ/`)
+```
+Elementor-FAQ/
+├── elementor-faq.php      # Main plugin file (entry point, autoloader)
+├── README.md              # Developer documentation
+├── readme.txt             # WordPress.org plugin repository readme
+├── assets/
+│   ├── css/
+│   │   ├── admin.css      # Admin area styling (meta boxes, columns)
+│   │   └── faq.css        # Frontend widget styling (accordion, tabs, search)
+│   └── js/
+│       ├── admin.js       # Admin functionality (Q&A repeater, shortcode copy)
+│       └── faq.js         # Frontend functionality (accordion, search, filtering)
+└── src/                   # PHP classes (PSR-4, namespace: Elementor_FAQ)
+    ├── Core/
+    │   ├── Debug_Logger.php   # Debugging utility (log, error, warning, info)
+    │   └── Plugin.php         # Main controller (services, hooks, init)
+    ├── Elementor/
+    │   ├── Elementor_Integration.php  # Registers widgets/styles/scripts
+    │   └── Widgets/
+    │       └── FAQ_Widget.php # Main Elementor widget (controls, render)
+    ├── PostTypes/
+    │   └── FAQ_Post_Type.php  # Custom post type 'faq-item' with meta boxes
+    └── Taxonomies/
+        └── FAQ_Category.php   # Taxonomy 'faq-category' for organizing FAQs
+```
+
+## Architecture
+
+### Class Hierarchy
+```
+Elementor_FAQ\Core\Plugin (singleton)
+├── Elementor_FAQ\Core\Debug_Logger
+├── Elementor_FAQ\PostTypes\FAQ_Post_Type
+├── Elementor_FAQ\Taxonomies\FAQ_Category
+└── Elementor_FAQ\Elementor\Elementor_Integration
+    └── Elementor_FAQ\Elementor\Widgets\FAQ_Widget
+```
+
+### Key Classes
+
+| Class | File | Purpose |
+|-------|------|---------|
+| `Plugin` | `src/Core/Plugin.php` | Main controller, registers services/hooks |
+| `Debug_Logger` | `src/Core/Debug_Logger.php` | Logging utility for development |
+| `FAQ_Post_Type` | `src/PostTypes/FAQ_Post_Type.php` | 'faq-item' post type with Q&A meta boxes |
+| `FAQ_Category` | `src/Taxonomies/FAQ_Category.php` | 'faq-category' taxonomy |
+| `Elementor_Integration` | `src/Elementor/Elementor_Integration.php` | Bridge to Elementor, registers widget |
+| `FAQ_Widget` | `src/Elementor/Widgets/FAQ_Widget.php` | Elementor widget with controls/render |
+
+### Autoloader
+PSR-4 autoloader in `elementor-faq.php`:
+- Namespace: `Elementor_FAQ`
+- Maps to `src/` directory
+
+## Plugin Features
+
+1. **Custom Post Type**: 'FAQ Item' for managing FAQs with Q&A repeater fields
+2. **Taxonomy**: 'FAQ Category' for organizing FAQs
+3. **Elementor Widget**: Native integration with content/style controls
+4. **Accordion**: Smooth expand/collapse with customizable animations
+5. **Search**: Real-time filtering through FAQ content
+6. **Category Tabs**: Horizontal/vertical layout options
+7. **Responsive**: Mobile-optimized with breakpoints
+8. **RTL Support**: Right-to-left language support
+
 ## Build & Release Process
 
 ### Building a Release ZIP
@@ -24,4 +108,3 @@ This will:
 4. Tag: `git tag vX.Y.Z`
 5. Push: `git push origin master --tags`
 6. Create GitHub release: `gh release create vX.Y.Z ".output/elementor-faq-X.Y.Z.zip" --title "vX.Y.Z" --notes "Release notes"`
-
