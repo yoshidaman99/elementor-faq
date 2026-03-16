@@ -1,0 +1,26 @@
+﻿{
+    "verification":  {
+                         "root_folder":  "elementor-faq",
+                         "status":  "verified"
+                     },
+    "zip_file":  "elementor-faq-1.0.1.zip",
+    "checksums":  {
+                      "sha256":  "e77642990d58c79d6bdd97122f5c5c1b53db827b59fe52210a8dc7558faf1a82",
+                      "md5":  "401882eb03b504b158561e2695c86921"
+                  },
+    "version":  "1.0.1",
+    "build_info":  {
+                       "timestamp":  "2026-03-16T22:53:06Z",
+                       "powershell_version":  "5.1.26100.7920",
+                       "platform":  "Windows_NT",
+                       "builder":  "build-zip.ps1"
+                   },
+    "files_count":  12,
+    "zip_size_kb":  17.31,
+    "plugin_slug":  "elementor-faq",
+    "git":  {
+                "branch":  "master",
+                "commit":  "68c09e45f91b6ba09bb9179175abf9787d4b9e71",
+                "tag":  "v1.0.1"
+            }
+}
