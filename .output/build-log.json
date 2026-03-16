@@ -1,18 +1,18 @@
 ﻿{
     "build_info":  {
-                       "timestamp":  "2026-03-17T01:35:44Z",
+                       "timestamp":  "2026-03-17T01:43:05Z",
                        "builder":  "build-zip.ps1"
                    },
     "checksums":  {
-                      "sha256":  "210a4b5c62de18cf7cef8eefad2a76eb22579c74ce06c3eb1d917c5ef4b4b8e4",
-                      "md5":  "dadf783326879c188425b8370c6a7e20"
+                      "sha256":  "e320ad84e93a86db488ee33144f11090401e3073dbb2e15dad059a5aee412575",
+                      "md5":  "d6bb03fbd95685d3dcce728d66e8c98f"
                   },
     "files_count":  12,
-    "zip_file":  "elementor-faq-1.0.6.zip",
-    "version":  "1.0.6",
+    "zip_file":  "elementor-faq-1.0.7.zip",
+    "version":  "1.0.7",
     "git":  {
                 "branch":  "master",
-                "commit":  "e1c868f830c88b3e9a12b8c31c799750f2335562",
+                "commit":  "c9068f0a2344b2f87c195a0e919a36ec0af37efc",
                 "tag":  null
             },
     "zip_size_kb":  17.43,
