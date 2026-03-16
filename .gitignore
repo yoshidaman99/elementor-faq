@@ -1,0 +1,6 @@
+.builder/
+.opencode/
+.output/
+.ref/
+AGENTS.md
+plugin builder/
