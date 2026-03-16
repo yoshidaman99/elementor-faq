@@ -176,21 +176,24 @@
         }
     }
     
+    function initFAQ($wrapper) {
+        if ($wrapper.length && !$wrapper.data('elementorFAQ')) {
+            new ElementorFAQ($wrapper);
+        }
+    }
+    
     $(document).ready(function() {
         $('.efaq-wrapper').each(function() {
-            new ElementorFAQ($(this));
+            initFAQ($(this));
         });
     });
     
     $(window).on('elementor/frontend/init', function() {
-        if (typeof elementorFrontend !== 'undefined') {
-            elementorFrontend.hooks.addAction('frontend/element_ready/elementor_faq.default', function($scope) {
-                const $wrapper = $scope.find('.efaq-wrapper');
-                if ($wrapper.length) {
-                    new ElementorFAQ($wrapper);
-                }
+        elementorFrontend.hooks.addAction('frontend/element_ready/elementor_faq.default', function($scope) {
+            $scope.find('.efaq-wrapper').each(function() {
+                initFAQ($(this));
             });
-        }
+        });
     });
     
 })(jQuery);
