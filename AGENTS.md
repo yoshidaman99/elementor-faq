@@ -46,36 +46,44 @@ FAQ/
 ├── .github/                   # GitHub configs (tracked)
 │   └── CONTRIBUTING.md
 ├── .opencode/                 # OpenCode development environment (local only - gitignored)
+│   ├── .gitignore
+│   ├── bun.lock
+│   ├── node_modules/
+│   └── package.json
 ├── .output/                   # Build output directory (local only - gitignored)
 │   ├── build-log.json
 │   ├── elementor-faq-X.Y.Z.zip
 │   ├── elementor-faq-X.Y.Z.zip.md5
 │   └── elementor-faq-X.Y.Z.zip.sha256
 ├── .ref/                      # Reference plugins (local only - gitignored)
+│   └── wc-carousel-grid-marketplace-and-pricing/
 ├── .gitignore                 # Excludes local dev files from git
 ├── AGENTS.md                  # This file (local only - gitignored)
-├── elementor-faq.php          # Main plugin file (entry point, autoloader)
-├── README.md                  # Developer documentation
-├── readme.txt                 # WordPress.org plugin repository readme
-├── assets/
-│   ├── css/
-│   │   ├── admin.css
-│   │   └── faq.css
-│   └── js/
-│       ├── admin.js
-│       └── faq.js
-└── src/                       # PHP classes (PSR-4, namespace: Elementor_FAQ)
-    ├── Core/
-    │   ├── Debug_Logger.php
-    │   └── Plugin.php
-    ├── Elementor/
-    │   ├── Elementor_Integration.php
-    │   └── Widgets/
-    │       └── FAQ_Widget.php
-    ├── PostTypes/
-    │   └── FAQ_Post_Type.php
-    └── Taxonomies/
-        └── FAQ_Category.php
+└── plugin builder/            # Plugin builder directory
+    └── plugin/
+        └── Elementor-FAQ/     # Main plugin files
+            ├── elementor-faq.php      # Main plugin file (entry point, autoloader)
+            ├── README.md              # Developer documentation
+            ├── readme.txt             # WordPress.org plugin repository readme
+            ├── assets/
+            │   ├── css/
+            │   │   ├── admin.css
+            │   │   └── faq.css
+            │   └── js/
+            │       ├── admin.js
+            │       └── faq.js
+            └── src/                   # PHP classes (PSR-4, namespace: Elementor_FAQ)
+                ├── Core/
+                │   ├── Debug_Logger.php
+                │   └── Plugin.php
+                ├── Elementor/
+                │   ├── Elementor_Integration.php
+                │   └── Widgets/
+                │       └── FAQ_Widget.php
+                ├── PostTypes/
+                │   └── FAQ_Post_Type.php
+                └── Taxonomies/
+                    └── FAQ_Category.php
 ```
 
 ## Architecture
