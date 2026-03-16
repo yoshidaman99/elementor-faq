@@ -62,6 +62,8 @@ FAQ/
 │   └── elementor-faq-X.Y.Z.zip.sha256
 ├── .ref/                      # Reference plugins (local only - gitignored)
 │   └── wc-carousel-grid-marketplace-and-pricing/
+├── .gitbuilder/               # Lock files for git operations (local only - gitignored)
+│   └── locks.json
 ├── .gitignore                 # Excludes local dev files from git
 ├── AGENTS.md                  # This file (local only - gitignored)
 └── plugin builder/            # Plugin builder directory
