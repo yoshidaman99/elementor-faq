@@ -13,7 +13,7 @@ $ConfigFile = Join-Path $ScriptDir "zip-config.json"
 $OutputDir = Join-Path $ProjectRoot ".output"
 
 $PluginSlug = "elementor-faq"
-$PluginDir = $ProjectRoot
+$PluginDir = Join-Path $ProjectRoot "plugin builder\plugin\Elementor-FAQ"
 
 function Write-Header {
     param([string]$Message)
