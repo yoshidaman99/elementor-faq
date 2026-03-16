@@ -20,6 +20,8 @@ FAQ/
 ├── README.md              # Developer documentation
 ├── readme.txt             # WordPress.org plugin repository readme
 ├── AGENTS.md              # This file
+├── plugin builder/
+
 ├── assets/
 │   ├── css/
 │   │   ├── admin.css      # Admin area styling (meta boxes, columns)
