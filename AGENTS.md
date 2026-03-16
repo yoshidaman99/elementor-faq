@@ -134,14 +134,14 @@ powershell -ExecutionPolicy Bypass -File ".builder/build-zip.ps1"
 ```
 
 This will:
-1. Read version from `elementor-faq.php` header
+1. Read version from `plugin builder/plugin/Elementor-FAQ/elementor-faq.php` header
 2. Create a ZIP in `.output/elementor-faq-{version}.zip`
 3. Generate MD5 and SHA256 checksums
 4. Create a `build-log.json` with build metadata
 
 ### Release Workflow
 
-1. Update version in `elementor-faq.php` (header and constant)
+1. Update version in `plugin builder/plugin/Elementor-FAQ/elementor-faq.php` (header and constant)
 2. Run build script: `powershell -ExecutionPolicy Bypass -File ".builder/build-zip.ps1"`
 3. Commit changes: `git add -A && git commit -m "Release vX.Y.Z"`
 4. Tag: `git tag vX.Y.Z`
