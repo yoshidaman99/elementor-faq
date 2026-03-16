@@ -199,6 +199,7 @@ try {
             if ($pattern -eq ".output" -and $relativePath -like ".output*") { $exclude = $true; break }
             if ($pattern -eq ".ref" -and $relativePath -like ".ref*") { $exclude = $true; break }
             if ($pattern -eq ".opencode" -and $relativePath -like ".opencode*") { $exclude = $true; break }
+            if ($pattern -eq ".gitbuilder" -and $relativePath -like ".gitbuilder*") { $exclude = $true; break }
             if ($pattern -eq "node_modules" -and $relativePath -like "*node_modules*") { $exclude = $true; break }
             if ($pattern -eq "vendor" -and $relativePath -like "*vendor*") { $exclude = $true; break }
             if ($pattern -eq "README.md" -and $relativePath -eq "README.md") { $exclude = $true; break }
