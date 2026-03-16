@@ -4,24 +4,34 @@
 
 ### GitHub Repository Structure
 
-The GitHub repository structure:
+The GitHub repository contains the contents of `plugin builder/plugin/Elementor-FAQ/` at root level:
 
 ```
 elementor-faq/
-    ├── elementor-faq.php      # Main plugin file
-    ├── readme.txt
-    ├── assets/
-    │   ├── css/
-    │   │   ├── admin.css
-    │   │   └── faq.css
-    │   └── js/
-    │       ├── admin.js
-    │       └── faq.js
-    └── src/
+├── .github/
+│   └── CONTRIBUTING.md
+├── README.md
+├── elementor-faq.php      # Main plugin file
+├── readme.txt
+├── assets/
+│   ├── css/
+│   │   ├── admin.css
+│   │   └── faq.css
+│   └── js/
+│       ├── admin.js
+│       └── faq.js
+└── src/
     ├── Core/
+    │   ├── Debug_Logger.php
+    │   └── Plugin.php
     ├── Elementor/
+    │   ├── Elementor_Integration.php
+    │   └── Widgets/
+    │       └── FAQ_Widget.php
     ├── PostTypes/
+    │   └── FAQ_Post_Type.php
     └── Taxonomies/
+        └── FAQ_Category.php
 ```
 
 ### NEVER commit these folders (gitignored):
