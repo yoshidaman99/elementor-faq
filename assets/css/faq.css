@@ -193,7 +193,12 @@
 
 .efaq-item-answer-content {
     padding: 15px 20px;
-    font-size: 16px !important;
+    font-size: var(--efaq-item-answer-font-size, 16px) !important;
+}
+
+.efaq-item-answer-content p {
+    margin: 0 0 1em 0;
+    font-size: var(--efaq-item-answer-font-size, 16px) !important;
 }
 
 .efaq-item-answer-content p:last-child {
