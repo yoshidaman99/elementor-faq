@@ -27,22 +27,7 @@ This will:
 
 ### Project Structure
 
-```
-├── .builder/           # Build scripts
-│   ├── build-zip.ps1   # Main build script
-│   └── zip-config.json # Build configuration
-├── .output/            # Built ZIP packages
-├── assets/
-│   ├── css/            # Frontend & admin styles
-│   └── js/             # Frontend & admin scripts
-├── src/
-│   ├── Core/           # Plugin class, debug logger
-│   ├── Elementor/      # Elementor integration & widgets
-│   ├── PostTypes/      # FAQ post type
-│   └── Taxonomies/     # FAQ category taxonomy
-├── elementor-faq.php   # Main plugin file
-└── readme.txt          # WordPress.org readme
-```
+
 
 ### Key Files
 
