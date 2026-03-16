@@ -4,10 +4,12 @@
 
 ### GitHub Repository Structure
 
-The GitHub repository contains the contents of `plugin builder/plugin/Elementor-FAQ/` at root level:
+The GitHub repository contains the contents of `plugin builder/plugin/Elementor-FAQ/` at root level, plus `.github/` folder:
 
 ```
 elementor-faq/
+├── .github/
+│   └── CONTRIBUTING.md
 ├── README.md
 ├── elementor-faq.php      # Main plugin file
 ├── readme.txt
