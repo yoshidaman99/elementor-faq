@@ -23,11 +23,11 @@ FAQ/
 ├── plugin builder/
 │   ├── plugin/
 │   │   ├── Elementor-FAQ/
-├── assets/
-│   ├── css/
-│   │   ├── admin.css      # Admin area styling (meta boxes, columns)
-│   │   └── faq.css        # Frontend widget styling (accordion, tabs, search)
-│   └── js/
+│   │   ├── assets/
+│   │   │   ├── css/
+│   │   │   ├── admin.css      # Admin area styling (meta boxes, columns)
+│   │   │   └── faq.css        # Frontend widget styling (accordion, tabs, search)
+│   │   └── js/
 │       ├── admin.js       # Admin functionality (Q&A repeater, shortcode copy)
 │       └── faq.js         # Frontend functionality (accordion, search, filtering)
 └── src/                   # PHP classes (PSR-4, namespace: Elementor_FAQ)
