@@ -108,12 +108,12 @@ Elementor_FAQ\Core\Plugin (singleton)
 
 | Class | File | Purpose |
 |-------|------|---------|
-| `Plugin` | `plugin builder/plugin/Elementor-FAQ/src/Core/Plugin.php` | Main controller, registers services/hooks |
-| `Debug_Logger` | `plugin builder/plugin/Elementor-FAQ/src/Core/Debug_Logger.php` | Logging utility for development |
-| `FAQ_Post_Type` | `plugin builder/plugin/Elementor-FAQ/src/PostTypes/FAQ_Post_Type.php` | 'faq-item' post type with Q&A meta boxes |
-| `FAQ_Category` | `plugin builder/plugin/Elementor-FAQ/src/Taxonomies/FAQ_Category.php` | 'faq-category' taxonomy |
-| `Elementor_Integration` | `plugin builder/plugin/Elementor-FAQ/src/Elementor/Elementor_Integration.php` | Bridge to Elementor, registers widget |
-| `FAQ_Widget` | `plugin builder/plugin/Elementor-FAQ/src/Elementor/Widgets/FAQ_Widget.php` | Elementor widget with controls/render |
+| `Plugin` | `src/Core/Plugin.php` | Main controller, registers services/hooks |
+| `Debug_Logger` | `src/Core/Debug_Logger.php` | Logging utility for development |
+| `FAQ_Post_Type` | `src/PostTypes/FAQ_Post_Type.php` | 'faq-item' post type with Q&A meta boxes |
+| `FAQ_Category` | `src/Taxonomies/FAQ_Category.php` | 'faq-category' taxonomy |
+| `Elementor_Integration` | `src/Elementor/Elementor_Integration.php` | Bridge to Elementor, registers widget |
+| `FAQ_Widget` | `src/Elementor/Widgets/FAQ_Widget.php` | Elementor widget with controls/render |
 
 ### Autoloader
 PSR-4 autoloader in `plugin builder/plugin/Elementor-FAQ/elementor-faq.php`:
