@@ -28,13 +28,13 @@ FAQ/
 │   │   │   ├── admin.css      # Admin area styling (meta boxes, columns)
 │   │   │   └── faq.css        # Frontend widget styling (accordion, tabs, search)
 │   │   └── js/
-│       ├── admin.js       # Admin functionality (Q&A repeater, shortcode copy)
-│       └── faq.js         # Frontend functionality (accordion, search, filtering)
-└── src/                   # PHP classes (PSR-4, namespace: Elementor_FAQ)
-    ├── Core/
-    │   ├── Debug_Logger.php   # Debugging utility (log, error, warning, info)
-    │   └── Plugin.php         # Main controller (services, hooks, init)
-    ├── Elementor/
+│            ├── admin.js       # Admin functionality (Q&A repeater, shortcode copy)
+│            └── faq.js         # Frontend functionality (accordion, search, filtering)
+        └── src/                   # PHP classes (PSR-4, namespace: Elementor_FAQ)
+            ├── Core/
+            │   ├── Debug_Logger.php   # Debugging utility (log, error, warning, info)
+            │   └── Plugin.php         # Main controller (services, hooks, init)
+        ├── Elementor/
     │   ├── Elementor_Integration.php  # Registers widgets/styles/scripts
     │   └── Widgets/
     │       └── FAQ_Widget.php # Main Elementor widget (controls, render)
