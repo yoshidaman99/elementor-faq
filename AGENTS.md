@@ -3,35 +3,7 @@
 ## Project Structure
 
 ### Repository Root
-```
-FAQ/
-├── .builder/              # Build scripts and configuration
-│   ├── build-zip.ps1      # PowerShell script for creating release ZIPs
-│   └── zip-config.json    # Build configuration (exclusions, required files)
-├── .git/                  # Git repository
-├── .output/               # Build output directory (ZIP files, checksums)
-├── .ref/                  # Reference plugins for development
-├── AGENTS.md              # This file
-├── assets/
-│   ├── css/
-│   │   ├── admin.css      # Admin area styling (meta boxes, columns)
-│   │   └── faq.css        # Frontend widget styling (accordion, tabs, search)
-│   └── js/
-│       ├── admin.js       # Admin functionality (Q&A repeater, shortcode copy)
-│       └── faq.js         # Frontend functionality (accordion, search, filtering)
-└── src/                   # PHP classes (PSR-4, namespace: Elementor_FAQ)
-    ├── Core/
-    │   ├── Debug_Logger.php   # Debugging utility (log, error, warning, info)
-    │   └── Plugin.php         # Main controller (services, hooks, init)
-    ├── Elementor/
-    │   ├── Elementor_Integration.php  # Registers widgets/styles/scripts
-    │   └── Widgets/
-    │       └── FAQ_Widget.php # Main Elementor widget (controls, render)
-    ├── PostTypes/
-    │   └── FAQ_Post_Type.php  # Custom post type 'faq-item' with meta boxes
-    └── Taxonomies/
-        └── FAQ_Category.php   # Taxonomy 'faq-category' for organizing FAQs
-```
+
 
 ## Architecture
 
