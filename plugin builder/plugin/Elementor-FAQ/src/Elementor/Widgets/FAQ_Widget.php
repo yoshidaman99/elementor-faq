@@ -841,26 +841,57 @@ class FAQ_Widget extends Widget_Base
                         }, $term_ids));
                     }
 
-                    $is_active = ($settings['default_expand'] === 'first' && $index === 0) || $settings['default_expand'] === 'all';
-                    ?>
-                    <div class="efaq-item <?php echo $is_active ? 'active' : ''; ?> <?php echo esc_attr($term_classes); ?>" data-index="<?php echo $index; ?>">
-                        <div class="efaq-item-question">
-                            <span class="efaq-item-title"><?php the_title(); ?></span>
-                            <span class="efaq-item-icon efaq-icon-open">
-                                <?php \Elementor\Icons_Manager::render_icon($settings['icon_open'], ['aria-hidden' => 'true']); ?>
-                            </span>
-                            <span class="efaq-item-icon efaq-icon-close">
-                                <?php \Elementor\Icons_Manager::render_icon($settings['icon_close'], ['aria-hidden' => 'true']); ?>
-                            </span>
-                        </div>
-                        <div class="efaq-item-answer">
-                            <div class="efaq-item-answer-content">
-                                <?php the_content(); ?>
+                    $qa_items = get_post_meta($faq_id, '_efaq_qa_items', true);
+                    
+                    if (!empty($qa_items) && is_array($qa_items)) {
+                        foreach ($qa_items as $qa_item) {
+                            if (empty($qa_item['question']) && empty($qa_item['answer'])) {
+                                continue;
+                            }
+                            
+                            $is_active = ($settings['default_expand'] === 'first' && $index === 0) || $settings['default_expand'] === 'all';
+                            ?>
+                            <div class="efaq-item <?php echo $is_active ? 'active' : ''; ?> <?php echo esc_attr($term_classes); ?>" data-index="<?php echo $index; ?>">
+                                <div class="efaq-item-question">
+                                    <span class="efaq-item-title"><?php echo esc_html($qa_item['question']); ?></span>
+                                    <span class="efaq-item-icon efaq-icon-open">
+                                        <?php \Elementor\Icons_Manager::render_icon($settings['icon_open'], ['aria-hidden' => 'true']); ?>
+                                    </span>
+                                    <span class="efaq-item-icon efaq-icon-close">
+                                        <?php \Elementor\Icons_Manager::render_icon($settings['icon_close'], ['aria-hidden' => 'true']); ?>
+                                    </span>
+                                </div>
+                                <div class="efaq-item-answer">
+                                    <div class="efaq-item-answer-content">
+                                        <?php echo wpautop(esc_html($qa_item['answer'])); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                            $index++;
+                        }
+                    } else {
+                        $is_active = ($settings['default_expand'] === 'first' && $index === 0) || $settings['default_expand'] === 'all';
+                        ?>
+                        <div class="efaq-item <?php echo $is_active ? 'active' : ''; ?> <?php echo esc_attr($term_classes); ?>" data-index="<?php echo $index; ?>">
+                            <div class="efaq-item-question">
+                                <span class="efaq-item-title"><?php the_title(); ?></span>
+                                <span class="efaq-item-icon efaq-icon-open">
+                                    <?php \Elementor\Icons_Manager::render_icon($settings['icon_open'], ['aria-hidden' => 'true']); ?>
+                                </span>
+                                <span class="efaq-item-icon efaq-icon-close">
+                                    <?php \Elementor\Icons_Manager::render_icon($settings['icon_close'], ['aria-hidden' => 'true']); ?>
+                                </span>
+                            </div>
+                            <div class="efaq-item-answer">
+                                <div class="efaq-item-answer-content">
+                                    <?php the_content(); ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php
-                    $index++;
+                        <?php
+                        $index++;
+                    }
                 endwhile;
                 wp_reset_postdata();
                 ?>
