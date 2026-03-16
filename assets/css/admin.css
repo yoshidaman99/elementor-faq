@@ -1,0 +1,75 @@
+/*!
+ * Elementor FAQ - Admin Styles
+ * Version: 1.0.0
+ */
+
+/* Admin FAQ List Table */
+.column-category {
+    width: 15%;
+}
+
+.column-order {
+    width: 10%;
+}
+
+/* FAQ Edit Screen */
+#efaq-meta-box .inside {
+    margin: 0;
+    padding: 12px;
+}
+
+.efaq-meta-field {
+    margin-bottom: 15px;
+}
+
+.efaq-meta-field:last-child {
+    margin-bottom: 0;
+}
+
+.efaq-meta-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.efaq-meta-field input[type="text"],
+.efaq-meta-field input[type="number"],
+.efaq-meta-field select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.efaq-meta-field input[type="text"]:focus,
+.efaq-meta-field input[type="number"]:focus,
+.efaq-meta-field select:focus {
+    border-color: #0073aa;
+    outline: none;
+    box-shadow: 0 0 0 1px #0073aa;
+}
+
+/* Shortcode Display */
+.efaq-shortcode-display {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: all;
+}
+
+.efaq-shortcode-display:hover {
+    background: #eee;
+}
+
+/* Utility */
+.efaq-description {
+    color: #666;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px;
+}
