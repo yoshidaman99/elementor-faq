@@ -2,15 +2,15 @@
 
 ## ZIP File Information
 - **Plugin:** elementor-faq
-- **Version:** 1.0.1
-- **ZIP File:** elementor-faq-1.0.1.zip
+- **Version:** 1.0.2
+- **ZIP File:** elementor-faq-1.0.2.zip
 
 ## IMPORTANT: Folder Structure
 
 The ZIP file contains the correct folder structure for WordPress:
 
 ~~~
-elementor-faq-1.0.1.zip
+elementor-faq-1.0.2.zip
 â””â”€â”€ elementor-faq/          <-- Internal folder name (NO version suffix!)
     â”œâ”€â”€ elementor-faq.php
     â”œâ”€â”€ readme.txt
@@ -30,7 +30,7 @@ When you upload a ZIP via **WordPress Admin > Plugins > Add New > Upload Plugin*
 ### Option 1: WordPress Admin (Recommended)
 1. Go to **WordPress Admin > Plugins > Add New**
 2. Click **"Upload Plugin"**
-3. Select the ZIP file: `elementor-faq-1.0.1.zip`
+3. Select the ZIP file: `elementor-faq-1.0.2.zip`
 4. Click **"Install Now"**
 5. WordPress will install to: `/wp-content/plugins/elementor-faq/`
 
@@ -56,8 +56,8 @@ After installation, the plugin should be at:
 
 NOT at:
 ~~~
-/wp-content/plugins/elementor-faq-1.0.1/elementor-faq.php  âŒ WRONG
-/wp-content/plugins/elementor-faq-1.0.1.zip/elementor-faq.php              âŒ WRONG
+/wp-content/plugins/elementor-faq-1.0.2/elementor-faq.php  âŒ WRONG
+/wp-content/plugins/elementor-faq-1.0.2.zip/elementor-faq.php              âŒ WRONG
 ~~~
 
 ## Version Update Detection
@@ -68,4 +68,4 @@ If WordPress doesn't detect an update from a previous version:
 3. Or use FTP to overwrite files directly
 
 ---
-Generated: 2026-03-16 22:53:06
+Generated: 2026-03-16 23:36:28
