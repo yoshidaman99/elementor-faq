@@ -9,21 +9,12 @@ FAQ/
 │   ├── build-zip.ps1      # PowerShell script for creating release ZIPs
 │   └── zip-config.json    # Build configuration (exclusions, required files)
 ├── .git/                  # Git repository
-├── .opencode/             # OpenCode development environment
 ├── .output/               # Build output directory (ZIP files, checksums)
 ├── .ref/                  # Reference plugins for development
-├── plugin builder/        # Actual plugin code
-│   └── plugin/
-│       └── Elementor-FAQ/ # Plugin root for distribution
-└── AGENTS.md              # This file
-```
-
-### Plugin Directory (`plugin builder/plugin/Elementor-FAQ/`)
-```
-Elementor-FAQ/
 ├── elementor-faq.php      # Main plugin file (entry point, autoloader)
 ├── README.md              # Developer documentation
 ├── readme.txt             # WordPress.org plugin repository readme
+├── AGENTS.md              # This file
 ├── assets/
 │   ├── css/
 │   │   ├── admin.css      # Admin area styling (meta boxes, columns)
