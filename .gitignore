@@ -2,4 +2,5 @@
 .opencode/
 .output/
 .ref/
+.gitbuilder/
 AGENTS.md
