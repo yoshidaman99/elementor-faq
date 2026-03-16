@@ -1,0 +1,32 @@
+{
+  "plugin_slug": "elementor-faq",
+  "expected_root_folder": "elementor-faq",
+  "required_files": [
+    "elementor-faq.php",
+    "readme.txt"
+  ],
+  "exclude_patterns": [
+    ".git",
+    ".github",
+    "node_modules",
+    "vendor",
+    "README.md",
+    "CHANGELOG.md",
+    "composer.json",
+    "composer.lock",
+    "package.json",
+    "package-lock.json",
+    ".gitignore",
+    ".env",
+    ".env.*",
+    "phpcs.xml",
+    "phpstan.neon",
+    ".phpunit.cache",
+    "phpunit.xml",
+    ".editorconfig",
+    ".distignore",
+    ".wp-env.json",
+    "*.map"
+  ],
+  "reject_version_suffixes": true
+}
