@@ -25,14 +25,3 @@ This will:
 5. Push: `git push origin master --tags`
 6. Create GitHub release: `gh release create vX.Y.Z ".output/elementor-faq-X.Y.Z.zip" --title "vX.Y.Z" --notes "Release notes"`
 
-### Project Structure
-
-
-
-### Key Files
-
-- `src/Core/Plugin.php` - Main plugin class, registers all hooks including script/style registration
-- `src/Elementor/Elementor_Integration.php` - Registers widgets, styles, and scripts with Elementor
-- `src/Elementor/Widgets/FAQ_Widget.php` - The FAQ Elementor widget
-- `assets/css/faq.css` - Frontend styles (uses em units for icon sizing)
-- `assets/js/faq.js` - Frontend toggle functionality
