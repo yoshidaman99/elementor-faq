@@ -17,31 +17,31 @@ FAQ/
 │   └── elementor-faq-X.Y.Z.zip.sha256
 ├── .ref/                      # Reference plugins for development (local only)
 ├── AGENTS.md                  # This file (local only)
-├── plugin builder/            # Legacy plugin folder (local only)
-        ├── plugin/ 
-        ├── Elementor-FAQ/ 
-                ├── elementor-faq.php          # Main plugin file (entry point, autoloader)
-                ├── README.md                  # Developer documentation
-                ├── readme.txt                 # WordPress.org plugin repository readme
-                ├── assets/
-                │   ├── css/
-                │   │   ├── admin.css          # Admin area styling (meta boxes, columns)
-                │   │   └── faq.css            # Frontend widget styling (accordion, tabs, search)
-                │   └── js/
-                │       ├── admin.js           # Admin functionality (Q&A repeater, shortcode copy)
-                │       └── faq.js             # Frontend functionality (accordion, search, filtering)
-                └── src/                       # PHP classes (PSR-4, namespace: Elementor_FAQ)
-                    ├── Core/
-                    │   ├── Debug_Logger.php   # Debugging utility (log, error, warning, info)
-                    │   └── Plugin.php         # Main controller (services, hooks, init)
-                    ├── Elementor/
-                    │   ├── Elementor_Integration.php  # Registers widgets/styles/scripts
-                    │   └── Widgets/
-                    │       └── FAQ_Widget.php # Main Elementor widget (controls, render)
-                    ├── PostTypes/
-                    │   └── FAQ_Post_Type.php  # Custom post type 'faq-item' with meta boxes
-                    └── Taxonomies/
-                        └── FAQ_Category.php   # Taxonomy 'faq-category' for organizing FAQs
+└── plugin builder/            # Legacy plugin folder (local only)
+    └── plugin/
+        └── Elementor-FAQ/     # Actual plugin directory
+            ├── elementor-faq.php          # Main plugin file (entry point, autoloader)
+            ├── README.md                  # Developer documentation
+            ├── readme.txt                 # WordPress.org plugin repository readme
+            ├── assets/
+            │   ├── css/
+            │   │   ├── admin.css          # Admin area styling (meta boxes, columns)
+            │   │   └── faq.css            # Frontend widget styling (accordion, tabs, search)
+            │   └── js/
+            │       ├── admin.js           # Admin functionality (Q&A repeater, shortcode copy)
+            │       └── faq.js             # Frontend functionality (accordion, search, filtering)
+            └── src/                       # PHP classes (PSR-4, namespace: Elementor_FAQ)
+                ├── Core/
+                │   ├── Debug_Logger.php   # Debugging utility (log, error, warning, info)
+                │   └── Plugin.php         # Main controller (services, hooks, init)
+                ├── Elementor/
+                │   ├── Elementor_Integration.php  # Registers widgets/styles/scripts
+                │   └── Widgets/
+                │       └── FAQ_Widget.php # Main Elementor widget (controls, render)
+                ├── PostTypes/
+                │   └── FAQ_Post_Type.php  # Custom post type 'faq-item' with meta boxes
+                └── Taxonomies/
+                    └── FAQ_Category.php   # Taxonomy 'faq-category' for organizing FAQs
 ```
 
 ### GitHub Repository (Tracked Files)
