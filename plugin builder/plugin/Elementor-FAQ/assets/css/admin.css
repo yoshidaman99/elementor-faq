@@ -1,0 +1,173 @@
+/*!
+ * Elementor FAQ - Admin Styles
+ * Version: 1.0.1
+ */
+
+.column-category {
+    width: 15%;
+}
+
+.column-order {
+    width: 10%;
+}
+
+#efaq-qa-wrapper {
+    padding: 10px 0;
+}
+
+#efaq-qa-items {
+    margin-bottom: 15px;
+}
+
+.efaq-qa-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.efaq-qa-item:hover {
+    border-color: #0073aa;
+}
+
+.efaq-qa-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.efaq-qa-number {
+    font-weight: 600;
+    font-size: 14px;
+    color: #0073aa;
+}
+
+.efaq-remove-item {
+    padding: 0 6px !important;
+    min-height: 28px !important;
+    line-height: 26px !important;
+}
+
+.efaq-remove-item .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: #dc3232;
+}
+
+.efaq-remove-item:hover .dashicons {
+    color: #a00;
+}
+
+.efaq-qa-field {
+    margin-bottom: 12px;
+}
+
+.efaq-qa-field:last-child {
+    margin-bottom: 0;
+}
+
+.efaq-qa-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.efaq-qa-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.efaq-qa-field textarea:focus {
+    border-color: #0073aa;
+    outline: none;
+    box-shadow: 0 0 0 1px #0073aa;
+}
+
+.efaq-qa-field textarea::placeholder {
+    color: #aaa;
+}
+
+#efaq-add-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#efaq-add-item .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+}
+
+.efaq-shortcode-display {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: all;
+}
+
+.efaq-shortcode-display:hover {
+    background: #eee;
+}
+
+.efaq-description {
+    color: #666;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+#efaq-meta-box .inside {
+    margin: 0;
+    padding: 12px;
+}
+
+.efaq-meta-field {
+    margin-bottom: 15px;
+}
+
+.efaq-meta-field:last-child {
+    margin-bottom: 0;
+}
+
+.efaq-meta-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.efaq-meta-field input[type="text"],
+.efaq-meta-field input[type="number"],
+.efaq-meta-field select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.efaq-meta-field input[type="text"]:focus,
+.efaq-meta-field input[type="number"]:focus,
+.efaq-meta-field select:focus {
+    border-color: #0073aa;
+    outline: none;
+    box-shadow: 0 0 0 1px #0073aa;
+}
