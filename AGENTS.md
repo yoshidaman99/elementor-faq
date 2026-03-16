@@ -8,20 +8,20 @@ The GitHub repository structure:
 
 ```
 elementor-faq/
-            ├── elementor-faq.php      # Main plugin file
-            ├── readme.txt
-            ├── assets/
-            │   ├── css/
-            │   │   ├── admin.css
-            │   │   └── faq.css
-            │   └── js/
-            │       ├── admin.js
-            │       └── faq.js
-            └── src/
-                ├── Core/
-                ├── Elementor/
-                ├── PostTypes/
-                └── Taxonomies/
+    ├── elementor-faq.php      # Main plugin file
+    ├── readme.txt
+    ├── assets/
+    │   ├── css/
+    │   │   ├── admin.css
+    │   │   └── faq.css
+    │   └── js/
+    │       ├── admin.js
+    │       └── faq.js
+    └── src/
+    ├── Core/
+    ├── Elementor/
+    ├── PostTypes/
+    └── Taxonomies/
 ```
 
 ### NEVER commit these folders (gitignored):
