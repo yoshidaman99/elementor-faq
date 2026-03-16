@@ -2,9 +2,9 @@
 
 ## Repository Structure Rules
 
-### CRITICAL: GitHub Repository Structure
+### GitHub Repository Structure
 
-The GitHub repository MUST always have **plugin files at the root level**:
+The GitHub repository structure:
 
 ```
 elementor-faq/
@@ -12,20 +12,23 @@ elementor-faq/
 ├── .github/
 │   └── CONTRIBUTING.md
 ├── README.md
-├── elementor-faq.php      # Main plugin file - MUST be at root
-├── readme.txt
-├── assets/
-│   ├── css/
-│   │   ├── admin.css
-│   │   └── faq.css
-│   └── js/
-│       ├── admin.js
-│       └── faq.js
-└── src/
-    ├── Core/
-    ├── Elementor/
-    ├── PostTypes/
-    └── Taxonomies/
+└── plugin builder/
+    └── plugin/
+        └── Elementor-FAQ/
+            ├── elementor-faq.php      # Main plugin file
+            ├── readme.txt
+            ├── assets/
+            │   ├── css/
+            │   │   ├── admin.css
+            │   │   └── faq.css
+            │   └── js/
+            │       ├── admin.js
+            │       └── faq.js
+            └── src/
+                ├── Core/
+                ├── Elementor/
+                ├── PostTypes/
+                └── Taxonomies/
 ```
 
 ### NEVER commit these folders (gitignored):
