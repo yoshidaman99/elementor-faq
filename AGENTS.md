@@ -37,6 +37,7 @@ elementor-faq/
 - `.opencode/` - IDE settings
 - `.output/` - Build artifacts
 - `.ref/` - Reference plugins
+- `.gitbuilder/` - Lock files for git operations
 - `AGENTS.md` - This file
 
 ## Local Development Environment
