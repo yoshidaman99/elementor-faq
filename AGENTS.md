@@ -8,13 +8,6 @@ The GitHub repository structure:
 
 ```
 elementor-faq/
-├── .gitignore
-├── .github/
-│   └── CONTRIBUTING.md
-├── README.md
-└── plugin builder/
-    └── plugin/
-        └── Elementor-FAQ/
             ├── elementor-faq.php      # Main plugin file
             ├── readme.txt
             ├── assets/
